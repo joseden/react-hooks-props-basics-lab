@@ -2,13 +2,13 @@ import React from "react";
 import Links from "./Links";
 
 // Define props as a parameter
-function About(props) {
+function About({bio ,links}) {
   return (
     <div id="about">
       <h2>About Me</h2>
-      {props.bio && <p>{props.bio}</p>}
+      {bio && bio.length > 1 ? <p>{bio}</p> : null}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="" />
-      <Links github={props.github} linkedin={props.linkedin} />
+      <Links github={links.github} linkedin={links.linkedin} />
     </div>
   );
 }
